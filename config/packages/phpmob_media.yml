@@ -1,0 +1,25 @@
+parameters:
+    phpmob.imagine.loader: phpcr_loader
+    phpmob.flysystem.phpcr.connection: media
+    phpmob.fm_elfinder.tmp_path_private: "%kernel.project_dir%/public/thumbnail"
+    phpmob.fm_elfinder.tmp_path_public: "%kernel.project_dir%/public/thumbnail"
+
+phpmob_media:
+    imagine:
+        driver: imagick
+
+doctrine:
+    dbal:
+        connections:
+            media:
+                driver: 'pdo_mysql'
+                server_version: '5.7'
+                charset: utf8
+                default_table_options:
+                    charset: utf8
+                    collate: utf8_unicode_ci
+                url: '%env(resolve:DATABASE_URL)%_media'
+
+imports:
+    - { resource: '@PhpMobMediaBundle/Resources/config/app/default.yml' }
+    - { resource: '@PhpMobMediaBundle/Resources/config/app/phpcr.yml' }

@@ -1,0 +1,22 @@
+cse_admin_login:
+    path: /login
+    methods: [GET]
+    defaults:
+        _controller: chang.controller.security:loginAction
+        _sylius:
+            template: "@ui/modern/security/login.html.twig"
+            permission: true
+            logged_in_route: ~
+            login_check_route: chang_admin_login_check
+            csrf_parameter: _csrf_admin_security
+            csrf_token_id: _csrf_admin_token
+
+cse_admin_login_check:
+    path: /login-check
+    methods: [POST]
+    defaults:
+        _controller: chang.controller.security:checkAction
+
+cse_admin_logout:
+    path: /logout
+    methods: [GET]

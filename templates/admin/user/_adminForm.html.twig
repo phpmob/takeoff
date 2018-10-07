@@ -1,0 +1,18 @@
+<div class="crud-content">
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword) }}
+    {{ form_row(form.picture, { label: false, caption: false }) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.firstName) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.lastName) }}
+        </div>
+    </div>
+    {{ form_row(form.localeCode) }}
+</div>
+<div class="crud-aside">
+    {{ form_row(form.enabled, { switch: 'success' }) }}
+</div>

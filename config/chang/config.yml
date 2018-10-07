@@ -1,0 +1,50 @@
+chang:
+    driver: doctrine/orm
+    packages:
+        Ajax: true
+        Messenger: true
+        Context: true
+#        Currency:
+#            money:
+#                options:
+#                    divisor: 100
+#                    base_currency: THB
+        DataFixture: true
+        DoctrineExtension:
+            mysql: true
+        Exception: true
+        ExpressionLanguage: true
+        Form:
+            convertRaw: true
+            generic: true
+        Grid: true
+        Locale: true
+        Menu: true
+        Paginate: true
+        Security:
+            full:
+                options:
+                    password_strength:
+                        algorithm: basic
+                    reserved_word:
+                        enabled: true
+                        words:
+                            - chang
+                            - dos
+#        SequenceNumber: true
+        Twig: true
+        User:
+            full:
+                options:
+                    verify_email_change:
+                        enabled: true
+        Admin: true
+        Web: true
+        UI: true
+        Validator: true
+#        Verification:
+#            phoneNumber:
+#                options:
+#                    target_url: /account/verify-number
+#                    ignored_request:
+#                        - { path: '^(?!\/account)|.\/verify-number' }

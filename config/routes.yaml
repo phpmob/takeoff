@@ -1,0 +1,12 @@
+cse_admin_index:
+    path: /staff
+    defaults:
+        _controller: Chang\Standard\Controller\AdminController::indexAction
+
+_admin:
+    prefix: /staff
+    resource: 'routes/_admin/main.yml'
+
+_web_localized:
+    resource: 'routes/_web/main.yml'
+    type: localized

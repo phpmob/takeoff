@@ -1,0 +1,35 @@
+@import "scss/variables/gobal";
+@import "scss/variables/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+@import "~flag-icon-css/sass/flag-icon";
+@import "~simple-line-icons/scss/simple-line-icons";
+@import "@ui/modern/scss/aside/main";
+@import "@ui/modern/scss/menu/main";
+@import "@ui/modern/scss/breadcrumb";
+@import "@ui/modern/scss/btn";
+@import "@ui/modern/scss/confirm";
+@import "@ui/modern/scss/modal";
+@import "@ui/modern/scss/loading.io";
+@import "@ui/modern/scss/navbar";
+@import "@ui/modern/scss/switch";
+@import "@ui/modern/scss/switcher";
+@import "@ui/modern/scss/container";
+@import "@ui/modern/scss/dropdown";
+@import "@ui/modern/scss/form";
+@import "@ui/modern/scss/form-filter";
+@import "@ui/modern/scss/login";
+@import "@ui/modern/scss/crud";
+
+html, body {
+  background-color: $body-bg;
+  height: 100%;
+}
+
+button, a {
+  outline: none;
+}
+
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}

@@ -1,0 +1,15 @@
+sylius_user:
+    resources:
+        admin:
+            user:
+                classes:
+                    model: Chang\Admin\Model\AdminUser
+        web:
+            user:
+                classes:
+                    model: Chang\Web\Model\WebUser
+        oauth:
+            user:
+                classes:
+                    model: Sylius\Component\User\Model\UserOAuth
+                    interface: Sylius\Component\User\Model\UserOAuthInterface

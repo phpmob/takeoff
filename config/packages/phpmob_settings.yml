@@ -1,0 +1,37 @@
+doctrine:
+    orm:
+        mappings:
+            PhpMobSettings:
+                type: xml
+                is_bundle: false
+                prefix: PhpMob\Settings\Model
+                dir: '%kernel.project_dir%/vendor/phpmob/settings-bundle/src/Resources/config/doctrine/model'
+
+phpmob_settings:
+    cache:
+        service: cache.app
+#    schemas:
+#        admin_seo:
+#            label: Admin Seo Settings
+#            settings:
+#                title:
+#                    label: Title
+#                    value: Admin!!
+#                    blueprint:
+#                        type: Symfony\Component\Form\Extension\Core\Type\TextType
+#        admin_site:
+#            label: Admin Site Settings
+#            settings:
+#                name:
+#                    label: Site Name
+#                    type: yaml
+#                    value: |
+#                        th: Chang
+#                        en: Chang
+#                    blueprint:
+#                        type: PhpMob\CmsBundle\Form\Type\YamlType
+#                url:
+#                    label: Url
+#                    value: /staff
+#                    blueprint:
+#                        type: Symfony\Component\Form\Extension\Core\Type\UrlType

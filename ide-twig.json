@@ -1,0 +1,16 @@
+{
+  "namespaces": [
+    {
+      "namespace": "",
+      "path": "vendor/symfony/twig-bridge/Resources/views/Form"
+    },
+    {
+      "namespace": "chang",
+      "path": "vendor/phpmob/chang/src/Application/Resources/views"
+    },
+    {
+      "namespace": "ui",
+      "path": "vendor/phpmob/chang/src/UI/Resources/views"
+    }
+  ]
+}

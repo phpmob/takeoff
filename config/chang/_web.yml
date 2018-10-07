@@ -1,0 +1,36 @@
+parameters:
+    chang_page_context_web:
+        site:
+            url: /
+            name: Chang SE
+            logo: /build/img/logo-php.png
+            logo_square: /build/img/logo-square.png
+        menus:
+            quick:
+                profile:
+                    label: chang.ui.profile
+                    route: cse_account_profile_update
+                    icon: far fa-user
+            account:
+                profile:
+                    label: chang.ui.profile
+                    route: cse_account_profile_update
+                    icon: far fa-user
+                account:
+                    label: chang.ui.account
+                    route: cse_account_account_update
+                    icon: fas fa-shield-alt
+                change_password:
+                    label: chang.ui.change_password
+                    route: cse_account_change_password
+                    icon: fas fa-key
+                divider: { divider: true }
+                logout:
+                    label: chang.ui.logout
+                    route: cse_web_logout
+                    icon: fas fa-sign-out-alt
+            main:
+                profile:
+                    label: chang.ui.profile
+                    route: cse_account_profile_update
+                    icon: far fa-user
