@@ -62,7 +62,6 @@ Encore
     .addStyleEntry('admin/style', './private/admin/app.scss')
 
     .addPlugin(new CopyWebpackPlugin([
-        { from: `${Chang.ui}/img/**`, to: 'img', flatten: true },
         { from: `${Chang.messenger}/web-push/**`, to: 'web-push', flatten: true },
         { from: `${Chang.messenger}/sounds/**`, to: 'sounds', flatten: true },
     ]))

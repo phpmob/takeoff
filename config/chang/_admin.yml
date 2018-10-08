@@ -8,15 +8,12 @@ parameters:
             quick:
                 profile:
                     label: chang.ui.profile
-                    route: takeoff_account_profile_update
                     icon: :account_box
                 account:
                     label: chang.ui.account
-                    route: takeoff_account_account_update
                     icon: fas fa-shield-alt
                 change_password:
                     label: password
-                    route: takeoff_account_change_password
                     icon: sl-ico-social-github
             account:
                 profile:
@@ -27,11 +24,9 @@ parameters:
                         data-modal: chang.ui.profile|trans
                 account:
                     label: chang.ui.account
-                    route: takeoff_account_account_update
                     icon: fas fa-shield-alt
                 change_password:
                     label: chang.ui.change_password
-                    route: takeoff_account_change_password
                     icon: fas fa-key
             main:
                 dashboard:

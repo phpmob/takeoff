@@ -7,6 +7,5 @@ _admin:
     prefix: /staff
     resource: 'routes/_admin/main.yml'
 
-_web_localized:
+_web:
     resource: 'routes/_web/main.yml'
-    type: localized
