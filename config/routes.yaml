@@ -1,4 +1,4 @@
-cse_admin_index:
+takeoff_admin_index:
     path: /staff
     defaults:
         _controller: Chang\Standard\Controller\AdminController::indexAction

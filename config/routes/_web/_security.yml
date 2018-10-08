@@ -1,4 +1,4 @@
-cse_web_login:
+takeoff_web_login:
     path: /login
     methods: [GET]
     defaults:
@@ -7,21 +7,21 @@ cse_web_login:
             template: "web/security/login.html.twig"
             permission: true
             logged_in_route: ~
-            login_check_route: cse_web_login_check
+            login_check_route: takeoff_web_login_check
             csrf_parameter: _csrf_web_security
             csrf_token_id: _csrf_web_token
 
-cse_web_login_check:
+takeoff_web_login_check:
     path: /login-check
     methods: [POST]
     defaults:
         _controller: chang.controller.security:checkAction
 
-cse_web_logout:
+takeoff_web_logout:
     path: /logout
     methods: [GET]
 
-cse_web_register:
+takeoff_web_register:
     path: /register
     methods: [GET, POST]
     defaults:
@@ -41,28 +41,28 @@ cse_web_register:
                         - chang_user_registration
                         - chang_user_registration_username
 
-cse_web_request_password_reset_token:
+takeoff_web_request_password_reset_token:
     path: /forgotten-password
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.web_user:requestPasswordResetTokenAction
         _sylius:
             template: "@SyliusShop/Account/requestPasswordReset.html.twig"
-            redirect: cse_web_login
+            redirect: takeoff_web_login
 
-cse_web_password_reset:
+takeoff_web_password_reset:
     path: /forgotten-password/{token}
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.web_user:resetPasswordAction
         _sylius:
             template: "@SyliusShop/Account/resetPassword.html.twig"
-            redirect: cse_web_login
+            redirect: takeoff_web_login
 
-cse_web_user_verification:
+takeoff_web_user_verification:
     path: /verify/{token}
     methods: [GET]
     defaults:
         _controller: sylius.controller.web_user:verifyAction
         _sylius:
-            redirect: cse_account_index
+            redirect: takeoff_account_index

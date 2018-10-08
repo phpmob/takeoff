@@ -6,7 +6,7 @@
             <constraint name="Image">
                 <option name="maxSize">1M</option>
                 <option name="groups">
-                    <value>cse_profile_update</value>
+                    <value>takeoff_profile_update</value>
                 </option>
             </constraint>
         </property>

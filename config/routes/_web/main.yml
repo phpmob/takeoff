@@ -1,13 +1,13 @@
-cse_web_index:
+takeoff_web_index:
     path: /
     defaults:
         _controller: Chang\Standard\Controller\WebController::indexAction
-cse_web_test:
+takeoff_web_test:
     path: /test
     defaults:
         _controller: Chang\Standard\Controller\WebController::testAction
 
-cse_web_flashs:
+takeoff_web_flashs:
     path: /flashes
     methods: [GET]
     defaults:

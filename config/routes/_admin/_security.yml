@@ -1,4 +1,4 @@
-cse_admin_login:
+takeoff_admin_login:
     path: /login
     methods: [GET]
     defaults:
@@ -11,12 +11,12 @@ cse_admin_login:
             csrf_parameter: _csrf_admin_security
             csrf_token_id: _csrf_admin_token
 
-cse_admin_login_check:
+takeoff_admin_login_check:
     path: /login-check
     methods: [POST]
     defaults:
         _controller: chang.controller.security:checkAction
 
-cse_admin_logout:
+takeoff_admin_logout:
     path: /logout
     methods: [GET]

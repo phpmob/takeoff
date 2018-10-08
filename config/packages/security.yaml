@@ -6,9 +6,9 @@ parameters:
 
 security:
     providers:
-        cse_admin_user_provider:
+        takeoff_admin_user_provider:
             id: sylius.admin_user_provider.email_or_name_based
-        cse_web_user_provider:
+        takeoff_web_user_provider:
             id: sylius.web_user_provider.email_or_name_based
     encoders:
         Sylius\Component\User\Model\UserInterface: argon2i
@@ -17,13 +17,13 @@ security:
             switch_user: true
             context: admin
             pattern: "%cse.security.regex_admin%"
-            provider: cse_admin_user_provider
+            provider: takeoff_admin_user_provider
             form_login:
-                provider: cse_admin_user_provider
-                login_path: cse_admin_login
-                check_path: cse_admin_login_check
-                failure_path: cse_admin_login
-                default_target_path: cse_admin_index
+                provider: takeoff_admin_user_provider
+                login_path: takeoff_admin_login
+                check_path: takeoff_admin_login_check
+                failure_path: takeoff_admin_login
+                default_target_path: takeoff_admin_index
                 use_forward: false
                 use_referer: true
                 csrf_token_generator: security.csrf.token_manager
@@ -36,8 +36,8 @@ security:
                 lifetime: 31536000
                 remember_me_parameter: _remember_me
             logout:
-                path: cse_admin_logout
-                target: cse_admin_login
+                path: takeoff_admin_logout
+                target: takeoff_admin_login
             anonymous: true
 
 #        oauth_token:
@@ -54,15 +54,15 @@ security:
             switch_user: true
             context: web
             pattern: "%cse.security.regex_web%"
-            provider: cse_web_user_provider
+            provider: takeoff_web_user_provider
             form_login:
                 success_handler: sylius.authentication.success_handler
                 failure_handler: sylius.authentication.failure_handler
-                provider: cse_web_user_provider
-                login_path: cse_web_login
-                check_path: cse_web_login_check
-                failure_path: cse_web_login
-                default_target_path: cse_account_index
+                provider: takeoff_web_user_provider
+                login_path: takeoff_web_login
+                check_path: takeoff_web_login_check
+                failure_path: takeoff_web_login
+                default_target_path: takeoff_account_index
                 use_forward: false
                 use_referer: true
                 csrf_token_generator: security.csrf.token_manager
@@ -74,8 +74,8 @@ security:
                 lifetime: 31536000
                 remember_me_parameter: _remember_me
             logout:
-                path: cse_web_logout
-                target: cse_web_login
+                path: takeoff_web_logout
+                target: takeoff_web_login
                 invalidate_session: false
             anonymous: true
 #            oauth:

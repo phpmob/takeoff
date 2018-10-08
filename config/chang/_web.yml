@@ -9,28 +9,28 @@ parameters:
             quick:
                 profile:
                     label: chang.ui.profile
-                    route: cse_account_profile_update
+                    route: takeoff_account_profile_update
                     icon: far fa-user
             account:
                 profile:
                     label: chang.ui.profile
-                    route: cse_account_profile_update
+                    route: takeoff_account_profile_update
                     icon: far fa-user
                 account:
                     label: chang.ui.account
-                    route: cse_account_account_update
+                    route: takeoff_account_account_update
                     icon: fas fa-shield-alt
                 change_password:
                     label: chang.ui.change_password
-                    route: cse_account_change_password
+                    route: takeoff_account_change_password
                     icon: fas fa-key
                 divider: { divider: true }
                 logout:
                     label: chang.ui.logout
-                    route: cse_web_logout
+                    route: takeoff_web_logout
                     icon: fas fa-sign-out-alt
             main:
                 profile:
                     label: chang.ui.profile
-                    route: cse_account_profile_update
+                    route: takeoff_account_profile_update
                     icon: far fa-user

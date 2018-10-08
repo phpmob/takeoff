@@ -5,7 +5,7 @@
         <property name="picture">
             <constraint name="Valid">
                 <option name="groups">
-                    <value>cse_profile_update</value>
+                    <value>takeoff_profile_update</value>
                 </option>
             </constraint>
         </property>
@@ -13,7 +13,7 @@
             <constraint name="NotBlank">
                 <option name="message">cse.user.first_name.not_blank</option>
                 <option name="groups">
-                    <value>cse_profile_update</value>
+                    <value>takeoff_profile_update</value>
                 </option>
             </constraint>
         </property>
@@ -21,7 +21,7 @@
             <constraint name="NotBlank">
                 <option name="message">cse.user.last_name.not_blank</option>
                 <option name="groups">
-                    <value>cse_profile_update</value>
+                    <value>takeoff_profile_update</value>
                 </option>
             </constraint>
         </property>
@@ -29,7 +29,7 @@
             <constraint name="NotBlank">
                 <option name="message">cse.user.gender.not_blank</option>
                 <option name="groups">
-                    <value>cse_profile_update</value>
+                    <value>takeoff_profile_update</value>
                 </option>
             </constraint>
         </property>
@@ -37,7 +37,7 @@
             <constraint name="NotBlank">
                 <option name="message">cse.user.locale_code.not_blank</option>
                 <option name="groups">
-                    <value>cse_profile_update</value>
+                    <value>takeoff_profile_update</value>
                 </option>
             </constraint>
         </property>
