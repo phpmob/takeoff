@@ -21,6 +21,13 @@ chang:
         Locale: true
         Menu: true
         Paginate: true
+        SecureArea:
+            password_confirm:
+                options:
+                    template: 'admin/security/secureArea.html.twig'
+                    lifetime: +1 minute
+                    patterns:
+                        - ^/staff/secure
         Security:
             full:
                 options:

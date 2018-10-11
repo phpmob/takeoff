@@ -1,0 +1,13 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block body %}
+    <form action="" method="post">
+        {% if last_error is defined %}
+            <div class="alert alert-danger">
+                {{ last_error.messageKey|trans(last_error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        <input type="password" name="{{ password_parameter }}">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
