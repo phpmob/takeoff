@@ -4,3 +4,7 @@ _admin_security:
 _admin_users:
     prefix: /admin-users
     resource: './_admin_user.yml'
+
+_security_audit:
+    prefix: /security-audit
+    resource: '../../../vendor/phpmob/chang/src/SecurityAudit/Resources/config/routing.yml'

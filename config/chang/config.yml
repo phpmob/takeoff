@@ -21,13 +21,15 @@ chang:
         Locale: true
         Menu: true
         Paginate: true
-        SecureArea:
-            password_confirm:
-                options:
-                    template: 'admin/security/secureArea.html.twig'
-                    lifetime: +1 minute
-                    patterns:
-                        - ^/staff/secure
+        GeoIp: true
+        SecurityAudit: true
+#        SecureArea:
+#            password_confirm:
+#                options:
+#                    template: 'admin/security/secureArea.html.twig'
+#                    lifetime: +1 minute
+#                    patterns:
+#                        - ^/staff/secure
         Security:
             full:
                 options:
@@ -35,11 +37,13 @@ chang:
                         algorithm: basic
                     reserved_word:
                         enabled: true
-                        words:
-                            - chang
-                            - dos
-#        SequenceNumber: true
+                        words: '%username_reserved_words%'
+        SequenceNumber: false
         Twig: true
+        Redis:
+            session:
+                options:
+                    dsn: "%env(REDIS_URL)%/1"
         User:
             full:
                 options:
