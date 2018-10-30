@@ -1,0 +1,37 @@
+sylius_fixtures:
+    suites:
+        prod:
+            listeners:
+                orm_purger: ~
+                logger: ~
+
+            fixtures:
+                locale:
+                    name: "locale"
+                    options:
+                        custom:
+                        - { code: th }
+                        - { code: en }
+                admin_user:
+                    name: "admin_user"
+                    options:
+                        random: 0
+                        custom:
+                        -
+                            email: "root@chang.com"
+                            username: "root"
+                            password: "root8899x"
+                            locale_code: '%locale%'
+                            roles: [ ROLE_ROOT ]
+                            enabled: true
+                web_user:
+                    name: "web_user"
+                    options:
+                        random: 0
+                        custom:
+                        -
+                            email: "web@chang.com"
+                            username: "web"
+                            password: "web9988x"
+                            locale_code: '%locale%'
+                            enabled: true
