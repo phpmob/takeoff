@@ -3,7 +3,7 @@ monolog:
         main:
             type: fingers_crossed
             action_level: debug
-            handler: nested
+            handler: chang_redis
             excluded_http_codes: [403, 404]
         nested:
             type: stream

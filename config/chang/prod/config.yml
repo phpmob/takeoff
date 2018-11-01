@@ -1,0 +1,10 @@
+chang:
+    packages:
+        Redis:
+            monolog:
+                options:
+                    level: error
+                    dsn: '%env(REDIS_URL)%/0'
+            session:
+                options:
+                    dsn: "%env(REDIS_URL)%/1"
