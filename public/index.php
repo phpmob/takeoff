@@ -6,10 +6,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+(new Dotenv())->load(__DIR__ . '/../.env');
+
 $env = $_SERVER['APP_ENV'] ?? 'dev';
 $debug = (bool)($_SERVER['APP_DEBUG'] ?? ('prod' !== $env));
-
-(new Dotenv())->load(__DIR__ . '/../.env' . ('dev' === $env ? '' : '.' . $env));
 
 if ($debug) {
     umask(0000);
