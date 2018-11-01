@@ -3,7 +3,7 @@ chang:
         Redis:
             monolog:
                 options:
-                    level: error
+                    level: debug
                     dsn: '%env(REDIS_URL)%/0'
             session:
                 options:
