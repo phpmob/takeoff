@@ -1,0 +1,121 @@
+version: "3"
+
+networks:
+    net:
+
+volumes:
+    data-db:
+    data-www:
+    data-redis:
+    data-rabbitmq:
+
+services:
+    mariadb:
+        image: wodby/mariadb:10.3
+        stop_grace_period: 30s
+        ports:
+        - '9033:3306'
+        environment:
+        - MYSQL_ROOT_PASSWORD=r00t
+        volumes:
+        - data-db:/var/lib/mysql
+        networks:
+        - net
+
+    redis:
+        image: wodby/redis:4.0
+        command: redis-server --appendonly yes --requirepass r00t
+        ports:
+        - '9063:6379'
+        volumes:
+        - data-redis:/data
+        networks:
+        - net
+        deploy:
+            replicas: 1
+            update_config:
+                parallelism: 2
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+
+    rabbitmq:
+        image: rabbitmq:3.7.7-management-alpine
+        ports:
+        - '9015:15672'
+        environment:
+        - RABBITMQ_DEFAULT_USER=root
+        - RABBITMQ_DEFAULT_PASS=r00t
+        - RABBITMQ_DEFAULT_VHOST=/
+        volumes:
+        - data-rabbitmq:/var/lib/rabbitmq
+        networks:
+        - net
+
+    node:
+        image: wodby/node:10.9
+        depends_on:
+          - rabbitmq
+          - nginx
+        environment:
+        - AMQP_HOST=amqp://root:r00t@rabbitmq:5672
+        - AMQP_QUEUES=worker,socket
+        volumes:
+        - data-www:/var/www/html
+        command: sh -c 'cd /var/www/html/current/docker/node && npm install && node index.js'
+        networks:
+        - net
+
+    nginx:
+        image: wodby/nginx:1.15
+        depends_on:
+        - php
+        ports:
+        - '9080:80'
+        environment:
+        - NGINX_ERROR_LOG_LEVEL=error
+        - NGINX_BACKEND_HOST=php
+        - NGINX_CONF_INCLUDE=/var/www/html/current/docker/nginx/*.conf
+        - NGINX_REAL_IP_HEADER=X-Forwarded-For
+        volumes:
+        - data-www:/var/www/html
+        networks:
+        - net
+
+    php:
+        image: wodby/php:7.2
+        depends_on:
+        - mariadb
+        environment:
+        # machine
+        - PHP_DATE_TIMEZONE=Asia/Bangkok
+        - PHP_FPM_CLEAR_ENV=no
+        - PHP_DISPLAY_ERRORS=off
+        - APP_ENV=prod
+        volumes:
+        - data-www:/var/www/html
+        networks:
+        - net
+        deploy:
+            replicas: 2
+
+    build:
+        image: liverbool/wodby-php-deploy
+        depends_on:
+        - mariadb
+        environment:
+        # deploy
+        - DEPLOY_REPOSITORY=https://github.com/phpmob/takeoff
+        - DEPLOY_BRANCH=master
+        - DEPLOY_DEPLOYER_TASK=deploy
+        - DEPLOY_DATA_SETUP=1
+        - DEPLOY_YARN_BUILD=1
+        - DEPLOY_PROD_ENV_FILE=.env.prod
+        # machine
+        - PHP_DATE_TIMEZONE=Asia/Bangkok
+        - GIT_USER_NAME=liverbool
+        - APP_ENV=prod
+        volumes:
+        - data-www:/var/www/html
+        networks:
+        - net
