@@ -59,7 +59,6 @@
     },
     "autoload": {
         "psr-4": {
-            "": "src/",
             "PhpMob\\Tagging\\": "Tagging/",
             "TakeOff\\": "src/"
         }

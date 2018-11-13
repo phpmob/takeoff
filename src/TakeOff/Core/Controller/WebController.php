@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TakeOff\Controller;
+namespace TakeOff\Core\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

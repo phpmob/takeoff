@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TakeOff\Context;
+namespace TakeOff\Core\Context;
 
 use Chang\Context\Page\PageContextInterface;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;

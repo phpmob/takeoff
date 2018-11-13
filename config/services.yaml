@@ -19,25 +19,24 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    TakeOff\:
-        resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+    TakeOff\Core\:
+        resource: '../src/TakeOff/Core/{Context}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    TakeOff\Controller\:
-        resource: '../src/Controller'
+    TakeOff\Core\Controller\:
+        resource: '../src/TakeOff/Core/Controller'
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    #TakeOff\Menu\:
-    #    resource: '../src/Menu'
+    #TakeOff\Core\Menu\:
+    #    resource: '../src/TakeOff/Menu'
     #    tags: ['kernel.event_subscriber']
 
     takeoff.context.page:
-        class: TakeOff\Context\PageContext
+        class: TakeOff\Core\Context\PageContext
         public: true
         arguments:
             - '@chang.context.page'

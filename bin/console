@@ -28,6 +28,6 @@ if ($debug) {
     }
 }
 
-$kernel = new Kernel($env, $debug);
+$kernel = new \TakeOff\Kernel($env, $debug);
 $application = new Application($kernel);
 $application->run($input);
