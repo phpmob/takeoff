@@ -37,4 +37,6 @@ return [
     Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle::class => ['all' => true],
     Sylius\Bundle\LocaleBundle\SyliusLocaleBundle::class => ['all' => true],
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
+
+    PhpMob\Tagging\Bundle\TaggingBundle::class => ['all' => true],
 ];

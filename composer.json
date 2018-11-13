@@ -60,7 +60,8 @@
     "autoload": {
         "psr-4": {
             "": "src/",
-            "Chang\\Standard\\": "src/"
+            "PhpMob\\Tagging\\": "Tagging/",
+            "TakeOff\\": "src/"
         }
     },
     "autoload-dev": {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Chang\Standard\Tests;
+namespace TakeOff\Tests;
 
 use Psr\Log\LoggerInterface;
 use Sylius\Component\Mailer\Sender\SenderInterface;

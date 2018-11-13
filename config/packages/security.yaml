@@ -1,8 +1,8 @@
 parameters:
-    cse.security.regex_admin: "^/staff"
-    cse.security.regex_root: "^/staff/root"
-    cse.security.regex_api: "^/api/v[1-9]+"
-    cse.security.regex_web: "^"
+    takeoff.security.regex_admin: "^/staff"
+    takeoff.security.regex_root: "^/staff/root"
+    takeoff.security.regex_api: "^/api/v[1-9]+"
+    takeoff.security.regex_web: "^"
 
 security:
     providers:
@@ -16,7 +16,7 @@ security:
         admin:
             switch_user: true
             context: admin
-            pattern: "%cse.security.regex_admin%"
+            pattern: "%takeoff.security.regex_admin%"
             provider: takeoff_admin_user_provider
             form_login:
                 provider: takeoff_admin_user_provider
@@ -45,7 +45,7 @@ security:
 #            security: false
 #
 #        api:
-#            pattern: "%cse.security.regex_api%/.*"
+#            pattern: "%takeoff.security.regex_api%/.*"
 #            stateless:  true
 #            anonymous:  false
 #            provider:  dos_oauth
@@ -53,7 +53,7 @@ security:
         web:
             switch_user: true
             context: web
-            pattern: "%cse.security.regex_web%"
+            pattern: "%takeoff.security.regex_web%"
             provider: takeoff_web_user_provider
             form_login:
                 success_handler: sylius.authentication.success_handler
@@ -100,11 +100,11 @@ security:
         - { path: "_widget_.*", allow_if: "request.isXmlHttpRequest()" }
         - { path: "_ajax_.*", allow_if: "request.isXmlHttpRequest()" }
 
-        - { path: "%cse.security.regex_root%/.*", role: ROLE_ROOT }
-        - { path: "%cse.security.regex_admin%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "%cse.security.regex_admin%/logout", role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "%cse.security.regex_admin%", role: ROLE_ADMIN }
-        #- { path: "%cse.security.regex_api%/.*", role: ROLE_API }
+        - { path: "%takeoff.security.regex_root%/.*", role: ROLE_ROOT }
+        - { path: "%takeoff.security.regex_admin%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "%takeoff.security.regex_admin%/logout", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "%takeoff.security.regex_admin%", role: ROLE_ADMIN }
+        #- { path: "%takeoff.security.regex_api%/.*", role: ROLE_API }
 
         - { path: "^/account", role: ROLE_USER }
 

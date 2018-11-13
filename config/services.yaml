@@ -15,29 +15,29 @@ services:
                             # fetching services directly from the container via $container->get() won't work.
                             # The best practice is to be explicit about your dependencies anyway.
         bind:
-            Chang\Context\Page\PageContextInterface: '@cse.context.page'
+            Chang\Context\Page\PageContextInterface: '@takeoff.context.page'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    Chang\Standard\:
+    TakeOff\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    Chang\Standard\Controller\:
+    TakeOff\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    #Chang\Standard\Menu\:
+    #TakeOff\Menu\:
     #    resource: '../src/Menu'
     #    tags: ['kernel.event_subscriber']
 
-    cse.context.page:
-        class: Chang\Standard\Context\PageContext
+    takeoff.context.page:
+        class: TakeOff\Context\PageContext
         public: true
         arguments:
             - '@chang.context.page'

@@ -1,11 +1,11 @@
 takeoff_web_index:
     path: /
     defaults:
-        _controller: Chang\Standard\Controller\WebController::indexAction
+        _controller: TakeOff\Controller\WebController::indexAction
 takeoff_web_test:
     path: /test
     defaults:
-        _controller: Chang\Standard\Controller\WebController::testAction
+        _controller: TakeOff\Controller\WebController::testAction
 
 takeoff_web_flashs:
     path: /flashes

@@ -4,5 +4,5 @@ services:
         autoconfigure: true
         public: false
 
-    Chang\Standard\Tests\FakeMailSender:
+    TakeOff\Tests\FakeMailSender:
         decorates: sylius.email_sender

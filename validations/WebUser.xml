@@ -11,7 +11,7 @@
         </property>
         <property name="firstName">
             <constraint name="NotBlank">
-                <option name="message">cse.user.first_name.not_blank</option>
+                <option name="message">takeoff.user.first_name.not_blank</option>
                 <option name="groups">
                     <value>takeoff_profile_update</value>
                 </option>
@@ -19,7 +19,7 @@
         </property>
         <property name="lastName">
             <constraint name="NotBlank">
-                <option name="message">cse.user.last_name.not_blank</option>
+                <option name="message">takeoff.user.last_name.not_blank</option>
                 <option name="groups">
                     <value>takeoff_profile_update</value>
                 </option>
@@ -27,7 +27,7 @@
         </property>
         <property name="gender">
             <constraint name="NotBlank">
-                <option name="message">cse.user.gender.not_blank</option>
+                <option name="message">takeoff.user.gender.not_blank</option>
                 <option name="groups">
                     <value>takeoff_profile_update</value>
                 </option>
@@ -35,7 +35,7 @@
         </property>
         <property name="localeCode">
             <constraint name="NotBlank">
-                <option name="message">cse.user.locale_code.not_blank</option>
+                <option name="message">takeoff.user.locale_code.not_blank</option>
                 <option name="groups">
                     <value>takeoff_profile_update</value>
                 </option>

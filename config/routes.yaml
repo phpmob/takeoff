@@ -1,7 +1,7 @@
 takeoff_admin_index:
     path: /staff
     defaults:
-        _controller: Chang\Standard\Controller\AdminController::indexAction
+        _controller: TakeOff\Controller\AdminController::indexAction
 
 _admin:
     prefix: /staff
