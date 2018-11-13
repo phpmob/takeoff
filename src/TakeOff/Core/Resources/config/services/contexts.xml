@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service id="takeoff.context.page" class="TakeOff\Core\Context\PageContext" public="true">
+            <argument type="service" id="chang.context.page"/>
+            <argument type="collection">
+                <argument key="admin" type="service" id="chang.context.admin_context"/>
+                <argument key="web" type="service" id="chang.context.web_context"/>
+            </argument>
+        </service>
+    </services>
+</container>

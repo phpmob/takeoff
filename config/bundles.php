@@ -38,5 +38,8 @@ return [
     Sylius\Bundle\LocaleBundle\SyliusLocaleBundle::class => ['all' => true],
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
 
-    PhpMob\Tagging\Bundle\TaggingBundle::class => ['all' => true],
+    // TODO: remove
+    Chang\Tagging\Bundle\TaggingBundle::class => ['all' => true],
+
+    TakeOff\Core\CoreBundle::class => ['all' => true],
 ];

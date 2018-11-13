@@ -1,0 +1,5 @@
+sylius_resource:
+    resources:
+        tagging.taggable:
+            classes:
+                model: TakeOff\Core\Model\Topic

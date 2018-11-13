@@ -14,30 +14,3 @@ services:
         public: false       # Allows optimizing the container by removing unused services; this also means
                             # fetching services directly from the container via $container->get() won't work.
                             # The best practice is to be explicit about your dependencies anyway.
-        bind:
-            Chang\Context\Page\PageContextInterface: '@takeoff.context.page'
-
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    TakeOff\Core\:
-        resource: '../src/TakeOff/Core/{Context}'
-
-    # controllers are imported separately to make sure services can be injected
-    # as action arguments even if you don't extend any base controller class
-    TakeOff\Core\Controller\:
-        resource: '../src/TakeOff/Core/Controller'
-        tags: ['controller.service_arguments']
-
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
-
-    #TakeOff\Core\Menu\:
-    #    resource: '../src/TakeOff/Menu'
-    #    tags: ['kernel.event_subscriber']
-
-    takeoff.context.page:
-        class: TakeOff\Core\Context\PageContext
-        public: true
-        arguments:
-            - '@chang.context.page'
-            - { admin: '@chang.context.admin_context', web: '@chang.context.web_context' }

@@ -1,0 +1,8 @@
+doctrine:
+    orm:
+        mappings:
+            TakeOffCore:
+                type: xml
+                is_bundle: false
+                prefix: TakeOff\Core\Model
+                dir: '%kernel.root_dir%/Core/Resources/config/doctrine/model'

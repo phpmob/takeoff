@@ -59,8 +59,8 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpMob\\Tagging\\": "Tagging/",
-            "TakeOff\\": "src/"
+            "Chang\\Tagging\\": "Tagging/",
+            "TakeOff\\": "src/TakeOff/"
         }
     },
     "autoload-dev": {
