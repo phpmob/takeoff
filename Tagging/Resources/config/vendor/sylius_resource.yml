@@ -1,0 +1,10 @@
+sylius_resource:
+    resources:
+        tagging.tag:
+            classes:
+                model: Chang\Tagging\Model\Tag
+                interface: Chang\Tagging\Model\TagInterface
+        tagging.taggable:
+            classes:
+                model: Chang\Tagging\Model\Taggable
+                interface: Chang\Tagging\Model\TaggableInterface

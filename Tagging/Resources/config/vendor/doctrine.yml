@@ -1,0 +1,9 @@
+doctrine:
+    orm:
+        mappings:
+            PhpMobTagging:
+                type: xml
+                is_bundle: false
+                prefix: Chang\Tagging\Model
+                # TODO: change to ../vendor
+                dir: '%kernel.project_dir%/Tagging/Resources/config/doctrine/model'
